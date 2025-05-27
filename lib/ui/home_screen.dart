@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:avaliacaoimc/ui/imc_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -14,9 +15,13 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Text(
-              'Tela Principal',
-              style: TextStyle(fontSize: 22, color: Colors.blueGrey),
+            Text('Bem-vindo!', style: TextStyle(fontSize: 22)),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(context,
+                  MaterialPageRoute(builder: (_) => const IMCScreen()));
+              },
+              child: Text('Calcular IMC'),
             ),
             ElevatedButton(
               onPressed: () {

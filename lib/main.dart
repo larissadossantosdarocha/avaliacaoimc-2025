@@ -1,7 +1,10 @@
-
-import 'package:telalogin/ui/login_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:avaliacaoimc/ui/login_screen.dart';
 
-void main(){
-  runApp(const MaterialApp(title:'Login App',home: LoginScreen()));
+void main() {
+  runApp(const MaterialApp(
+    title: 'Login App',
+    home: LoginScreen(),
+    debugShowCheckedModeBanner: false,
+  ));
 }

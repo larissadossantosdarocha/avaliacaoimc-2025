@@ -1,5 +1,6 @@
-import 'package:telalogin/ui/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:avaliacaoimc/ui/home_screen.dart';
+import 'package:avaliacaoimc/ui/imc_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -19,40 +20,19 @@ class _LoginScreenState extends State<LoginScreen> {
         title: Text('Tela de Login'),
         backgroundColor: Colors.blueGrey,
       ),
-      body: Center(
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Text(
-              'Email',
-              style: TextStyle(fontSize: 18, color: Colors.blueGrey),
-            ),
             TextField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                labelText: 'Digite seu e-mail',
-              ),
-              onChanged: (value) {
-                setState(() {
-                  email = value;
-                });
-              },
-            ),
-            Text(
-              'Senha',
-              style: TextStyle(fontSize: 18, color: Colors.blueGrey),
+              decoration: InputDecoration(labelText: 'Digite seu e-mail'),
+              onChanged: (value) => setState(() => email = value),
             ),
             TextField(
               obscureText: true,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                labelText: 'Digite sua senha',
-              ),
-              onChanged: (value) {
-                setState(() {
-                  senha = value;
-                });
-              },
+              decoration: InputDecoration(labelText: 'Digite sua senha'),
+              onChanged: (value) => setState(() => senha = value),
             ),
             ElevatedButton(
               onPressed: () {
@@ -62,23 +42,18 @@ class _LoginScreenState extends State<LoginScreen> {
                     MaterialPageRoute(builder: (context) => const HomeScreen()),
                   );
                 } else {
-                  // mensagem de erro como um alerta
                   showDialog(
                     context: context,
-                    builder: (context) {
-                      return AlertDialog(
-                        title: Text('Erro de Login'),
-                        content: Text('Email ou senha incorretos.'),
-                        actions: [
-                          TextButton(
-                            onPressed: () {
-                              Navigator.of(context).pop();
-                            },
-                            child: Text('OK'),
-                          ),
-                        ],
-                      );
-                    },
+                    builder: (context) => AlertDialog(
+                      title: Text('Erro de Login'),
+                      content: Text('Email ou senha incorretos.'),
+                      actions: [
+                        TextButton(
+                          onPressed: () => Navigator.of(context).pop(),
+                          child: Text('OK'),
+                        )
+                      ],
+                    ),
                   );
                 }
               },
