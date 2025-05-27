@@ -1,8 +1,6 @@
 # applogin
-Aplicativo simples de login com dados estáticos.
-```
-email: aluno@email.com
-senha: senha123
+Aplicativo simples de IMC com dados estáticos.
+
 ```
 ## Tecnologias
 Flutter
