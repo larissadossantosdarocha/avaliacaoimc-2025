@@ -1,4 +1,4 @@
-# applogin
+# IMC
 Aplicativo simples de IMC
 
 ```
