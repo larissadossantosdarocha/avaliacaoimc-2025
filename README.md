@@ -1,5 +1,5 @@
 # applogin
-Aplicativo simples de IMC com dados estáticos.
+Aplicativo simples de IMC
 
 ```
 ## Tecnologias
